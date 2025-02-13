@@ -1,4 +1,5 @@
 # Ignorar archivos y carpetas de Visual Studio
+/Migrations/
 .vs/
 *.vsidx
 *.vscode/
