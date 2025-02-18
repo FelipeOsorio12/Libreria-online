@@ -3,6 +3,7 @@ using System;
 using Libreria.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Libreria.API.Migrations
 {
     [DbContext(typeof(libreraryContext))]
-    partial class libreraryContextModelSnapshot : ModelSnapshot
+    [Migration("20250218183841_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -292,18 +295,15 @@ namespace Libreria.API.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("LibroId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("LiibroId")
-                        .HasColumnType("integer");
-
                     b.Property<DateOnly>("fechaPublicacion")
                         .HasColumnType("date");
 
+                    b.Property<int>("libroId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("LibroId")
+                    b.HasIndex("libroId")
                         .IsUnique();
 
                     b.ToTable("news");
@@ -652,13 +652,13 @@ namespace Libreria.API.Migrations
 
             modelBuilder.Entity("Libreria.API.Models.News", b =>
                 {
-                    b.HasOne("Libreria.API.Models.Books", "Books")
-                        .WithOne("News")
-                        .HasForeignKey("Libreria.API.Models.News", "LibroId")
+                    b.HasOne("Libreria.API.Models.Books", "books")
+                        .WithOne("noticias")
+                        .HasForeignKey("Libreria.API.Models.News", "libroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Books");
+                    b.Navigation("books");
                 });
 
             modelBuilder.Entity("Libreria.API.Models.NewsSubscriptions", b =>
@@ -764,7 +764,7 @@ namespace Libreria.API.Migrations
 
             modelBuilder.Entity("Libreria.API.Models.Books", b =>
                 {
-                    b.Navigation("News")
+                    b.Navigation("noticias")
                         .IsRequired();
                 });
 

@@ -3,23 +3,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Libreria.API.Models
 {
-    public class NewsSubscriptions
+    public class UsersRoles
     {
         public int Id { get; set; }
-
         public int userId { get; set; }
 
-        [ForeignKey ("userId")]
-        [Required]
+        public int rolesId { get; set; }
 
+        [ForeignKey("userId")]
+
+        [Required]
 
         public Users users { get; set; }
 
-
-
+        [ForeignKey("rolesId")]
         [Required]
-        public DateTime fechaSuscripcion { get; set; }
-
-
+        public Roles roles { get; set; }
     }
 }

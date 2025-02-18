@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Libreria.API
 {
-    //Entender mañana el constructor y el OnModelCreating
     public class libreraryContext : DbContext
     {
         public DbSet<Addresses> addresses { get; set; }
@@ -33,16 +32,20 @@ namespace Libreria.API
 
         public DbSet <Users> users { get; set; }
 
+        public DbSet <CanceledPurchases> canceledPurchases { get; set; }
+
+        public DbSet <LiteraryTastes> literaryTastes { get; set; }
+
+        public DbSet <UsersRoles> usersRoles { get; set; }
+
 
         public libreraryContext(DbContextOptions<libreraryContext> options) : base(options)
         {
         }
 
-        // Método para configurar el contexto (opcional, para personalizar mapeos o configuración)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Aquí puedes realizar configuraciones adicionales si las necesitas
-            // Por ejemplo, establecer reglas para la base de datos
+          
         }
     }
 }
