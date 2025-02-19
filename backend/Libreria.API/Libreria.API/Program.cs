@@ -1,5 +1,6 @@
 using Libreria.API;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<libreraryContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Libreria API",
+        Version = "v1"
+    });
+});
 
 var app = builder.Build();
 
@@ -17,8 +28,18 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+else
+{
+    // Habilitar Swagger solo en desarrollo
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Libreria API v1");
+        c.RoutePrefix = ""; // Para que cargue en la raíz (opcional)
+    });
+}
 
-app.UseHttpsRedirection();
+    app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
