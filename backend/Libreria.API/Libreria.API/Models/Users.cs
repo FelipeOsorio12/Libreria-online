@@ -7,8 +7,9 @@ namespace Libreria.API.Models
     {
         public int Id { get; set; }
 
-
+        [Required]
         public NewsSubscriptions newsSubscriptions { get; set; }
+
         public ICollection<UsersRoles> usersRolesId { get; set; }
 
         public int dni { get; set; }

@@ -7,11 +7,12 @@ namespace Libreria.API.Models
     {
         public int Id { get; set; }
 
+
+        [ForeignKey("users")]
+
         public int userId { get; set; }
 
-        [ForeignKey ("userId")]
         [Required]
-
 
         public Users users { get; set; }
 

@@ -8,9 +8,11 @@ namespace Libreria.API.Models
        
         public int Id { get; set; }
 
+
+        [ForeignKey("Books")]
+
         public int LibroId { get; set; }
 
-        [ForeignKey("LibroId")]
 
         [Required]
         public  Books Books { get; set; }
