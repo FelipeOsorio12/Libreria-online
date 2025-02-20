@@ -136,7 +136,6 @@ C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.
 C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.API\obj\Debug\net8.0\Libreria.API.pdb
 C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.API\obj\Debug\net8.0\Libreria.API.genruntimeconfig.cache
 C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.API\obj\Debug\net8.0\ref\Libreria.API.dll
-C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\andre\Documents\Proyecto\Libreria-online\backend\Libreria.API\Libreria.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll

@@ -5,7 +5,7 @@
 namespace Libreria.API.Migrations
 {
     /// <inheritdoc />
-    public partial class relationsOneToOneFixed : Migration
+    public partial class FixForeignKeyNews : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,13 +24,6 @@ namespace Libreria.API.Migrations
                 table: "news",
                 newName: "IX_news_LibroId");
 
-            migrationBuilder.AddColumn<int>(
-                name: "LiibroId",
-                table: "news",
-                type: "integer",
-                nullable: false,
-                defaultValue: 0);
-
             migrationBuilder.AddForeignKey(
                 name: "FK_news_books_LibroId",
                 table: "news",
@@ -45,10 +38,6 @@ namespace Libreria.API.Migrations
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_news_books_LibroId",
-                table: "news");
-
-            migrationBuilder.DropColumn(
-                name: "LiibroId",
                 table: "news");
 
             migrationBuilder.RenameColumn(

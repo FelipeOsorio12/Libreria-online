@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Libreria.API.Migrations
 {
     [DbContext(typeof(libreraryContext))]
-    [Migration("20250218233437_relationsOneToOneFixed")]
-    partial class relationsOneToOneFixed
+    [Migration("20250220034739_FixForeignKeyNews")]
+    partial class FixForeignKeyNews
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -296,9 +296,6 @@ namespace Libreria.API.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int>("LibroId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("LiibroId")
                         .HasColumnType("integer");
 
                     b.Property<DateOnly>("fechaPublicacion")

@@ -295,9 +295,6 @@ namespace Libreria.API.Migrations
                     b.Property<int>("LibroId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("LiibroId")
-                        .HasColumnType("integer");
-
                     b.Property<DateOnly>("fechaPublicacion")
                         .HasColumnType("date");
 
