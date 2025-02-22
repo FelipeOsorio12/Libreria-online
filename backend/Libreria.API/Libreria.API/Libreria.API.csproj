@@ -21,8 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Functions\" />
     <Folder Include="DTOs\" />
     <Folder Include="Utilities\" />
   </ItemGroup>

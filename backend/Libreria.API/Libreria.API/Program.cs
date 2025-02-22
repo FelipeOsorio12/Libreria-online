@@ -1,4 +1,5 @@
 using Libreria.API;
+using Libreria.API.Functions.BooksFunctions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -18,6 +19,11 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 });
+
+builder.Services.AddControllers();
+
+builder.Services.AddScoped<GetBookById>();
+
 
 var app = builder.Build();
 
@@ -47,5 +53,5 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+app.MapControllers();
 app.Run();
