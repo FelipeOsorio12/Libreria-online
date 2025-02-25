@@ -1,4 +1,5 @@
 ﻿using Libreria.API.Functions.BooksFunctions;
+using Libreria.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libreria.API.Controllers
@@ -7,11 +8,11 @@ namespace Libreria.API.Controllers
     [Route("api/[controller]")]
     public class BooksController : ControllerBase
     {
-        private readonly GetBookById _getBookById;
+        private readonly BooksService _booksService;
 
-        public BooksController (GetBookById getBookById)    
+        public BooksController (BooksService booksService)    
         {
-            _getBookById = getBookById;
+            _booksService = booksService;
         }
 
         /// <summary>
@@ -24,7 +25,7 @@ namespace Libreria.API.Controllers
 
         public async Task <IActionResult> GetBook (int id)
         {
-            var libro = await _getBookById.gettBookByIdAsync(id);
+            var libro = await _booksService.gettBookByIdAsync(id);
 
             if( libro == null)
             {
@@ -33,11 +34,7 @@ namespace Libreria.API.Controllers
             }
 
             return Ok(libro);
-            //GetBooks getBooks = new GetBooks();
-
-            //getBooks.GetBookById(Id);
-
-            //return Ok;
+            
         }
     }
 }

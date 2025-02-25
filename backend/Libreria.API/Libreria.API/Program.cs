@@ -1,5 +1,6 @@
 using Libreria.API;
 using Libreria.API.Functions.BooksFunctions;
+using Libreria.API.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -22,7 +23,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<GetBookById>();
+builder.Services.AddScoped<BooksService>();
 
 
 var app = builder.Build();
