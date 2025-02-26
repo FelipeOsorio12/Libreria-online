@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "Libreria.API.Controllers.BooksController",
+    "Method": "GetAllBooks",
+    "RelativePath": "api/Books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libreria.API.Controllers.BooksController",
+    "Method": "editBookById",
+    "RelativePath": "api/Books",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editBookDTO",
+        "Type": "Libreria.API.DTOs.EditBookDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libreria.API.Controllers.BooksController",
     "Method": "GetBook",
     "RelativePath": "api/Books/{id}",
     "HttpMethod": "GET",
@@ -9,6 +35,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libreria.API.Controllers.BooksController",
+    "Method": "deleteBookById",
+    "RelativePath": "api/Books/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
         "Type": "System.Int32",
         "IsRequired": true
       }
