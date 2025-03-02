@@ -77,5 +77,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libreria.API.Controllers.UsersController",
+    "Method": "getAllUsers",
+    "RelativePath": "api/Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

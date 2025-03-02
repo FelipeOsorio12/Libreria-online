@@ -24,6 +24,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<BooksService>();
 
+builder.Services.AddScoped<UsersService>();
 
 var app = builder.Build();
 
