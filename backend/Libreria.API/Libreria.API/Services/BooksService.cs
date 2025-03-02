@@ -28,11 +28,11 @@ namespace Libreria.API.Services
 
         //Editar libro
 
-        public async Task<int> editBookByIdAsync(EditBookDTO editBookDTO)
+        public async Task<int> editBookByIdAsync(int id,EditBookDTO editBookDTO)
         {
             //entender que hace esta linea
-            var book = await _libreraryContext.books.SingleAsync(b => b.Id == editBookDTO.Id);
-            if(book == null)
+            var book = await _libreraryContext.books.FindAsync(id);
+            if (book == null)
             {
                 return 0;
 
@@ -53,13 +53,36 @@ namespace Libreria.API.Services
 
         //Añadir libro
 
-        //Eliminar libro
+        public async Task <int> AddBookAsync(CreateBookDTO createBookDTO)
+        {
 
-        //diferencia entre FirstOrDefaultAsync y SingleAsync
+            var createBookEntity = new Books
+            {
+                titulo = createBookDTO.titulo,
+                autor = createBookDTO.autor,
+                anioPublicacion = createBookDTO.anioPublicacion,
+                genero = createBookDTO.genero,
+                numeroPagina = createBookDTO.numeroPagina,
+                editiorial = createBookDTO.editiorial,
+                idioma = createBookDTO.idioma,
+                fechapublicacion = createBookDTO.fechapublicacion,
+                estado = createBookDTO.estado,
+                precio = createBookDTO.precio,
+                sipnosis = createBookDTO.sipnosis,
+                imagenPortada = createBookDTO.imagenPortada,
+            };
+
+            var book = await _libreraryContext.books.AddAsync(createBookEntity);
+
+            return await _libreraryContext.SaveChangesAsync();
+
+        }
+
+        //Eliminar libro
 
         public async Task<int> DeleteBookByIdAsync(int Id)
         {
-            var book = await _libreraryContext.books.FirstOrDefaultAsync(b => b.Id == Id );
+            var book = await _libreraryContext.books.FindAsync(Id);
             if (book == null)
             {
                 return 0;

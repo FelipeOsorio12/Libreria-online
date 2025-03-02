@@ -27,6 +27,46 @@
           }
         }
       },
+      "patch": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditBookDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditBookDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditBookDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Books"
@@ -60,7 +100,7 @@
           }
         }
       },
-      "patch": {
+      "post": {
         "tags": [
           "Books"
         ],
@@ -68,17 +108,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EditBookDTO"
+                "$ref": "#/components/schemas/CreateBookDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/EditBookDTO"
+                "$ref": "#/components/schemas/CreateBookDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/EditBookDTO"
+                "$ref": "#/components/schemas/CreateBookDTO"
               }
             }
           }
@@ -93,16 +133,92 @@
   },
   "components": {
     "schemas": {
-      "EditBookDTO": {
+      "CreateBookDTO": {
         "required": [
-          "id"
+          "anioPublicacion",
+          "autor",
+          "editiorial",
+          "estado",
+          "fechapublicacion",
+          "genero",
+          "idioma",
+          "imagenPortada",
+          "isbn",
+          "numeroPagina",
+          "precio",
+          "titulo"
         ],
         "type": "object",
         "properties": {
-          "id": {
+          "titulo": {
+            "maxLength": 250,
+            "minLength": 1,
+            "type": "string"
+          },
+          "autor": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string"
+          },
+          "anioPublicacion": {
             "type": "integer",
             "format": "int32"
           },
+          "genero": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "numeroPagina": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "editiorial": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string"
+          },
+          "isbn": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idioma": {
+            "maxLength": 50,
+            "minLength": 2,
+            "type": "string"
+          },
+          "fechapublicacion": {
+            "type": "string",
+            "format": "date"
+          },
+          "estado": {
+            "maxLength": 20,
+            "minLength": 1,
+            "type": "string"
+          },
+          "precio": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "sipnosis": {
+            "maxLength": 1000,
+            "type": "string",
+            "nullable": true
+          },
+          "imagenPortada": {
+            "type": "string",
+            "format": "byte"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditBookDTO": {
+        "type": "object",
+        "properties": {
           "titulo": {
             "maxLength": 250,
             "minLength": 1,

@@ -11,15 +11,15 @@
   },
   {
     "ContainingType": "Libreria.API.Controllers.BooksController",
-    "Method": "editBookById",
+    "Method": "addBook",
     "RelativePath": "api/Books",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "editBookDTO",
-        "Type": "Libreria.API.DTOs.EditBookDTO",
+        "Name": "createBookDTO",
+        "Type": "Libreria.API.DTOs.CreateBookDTO",
         "IsRequired": true
       }
     ],
@@ -36,6 +36,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libreria.API.Controllers.BooksController",
+    "Method": "editBookById",
+    "RelativePath": "api/Books/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "editBookDTO",
+        "Type": "Libreria.API.DTOs.EditBookDTO",
         "IsRequired": true
       }
     ],

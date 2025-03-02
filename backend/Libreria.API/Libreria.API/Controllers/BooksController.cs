@@ -59,9 +59,9 @@ namespace Libreria.API.Controllers
 
         }
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         //revisar exepción cuando no se manda el id
-        public async Task<IActionResult> editBookById(EditBookDTO editBookDTO)
+        public async Task<IActionResult> editBookById(int id,[FromBody] EditBookDTO editBookDTO)
         {
             if (!ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace Libreria.API.Controllers
                 });
             }
 
-            var result = await _booksService.editBookByIdAsync(editBookDTO);
+            var result = await _booksService.editBookByIdAsync(id,editBookDTO);
 
             if (result == 0)
             {
@@ -104,6 +104,30 @@ namespace Libreria.API.Controllers
 
             return Ok(new { message = "Eliminación correcta." });
 
+        }
+
+        [HttpPost]
+
+        public async Task <IActionResult> addBook([FromBody]CreateBookDTO createBookDTO)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    message = "Hubo errores en la validación.",
+                    errors = ModelState.Values.SelectMany(v => v.Errors)
+                               .Select(e => e.ErrorMessage)
+                });
+            }
+
+            var result = await _booksService.AddBookAsync(createBookDTO);
+
+           if (result == 0)
+            {
+                return StatusCode(500, "No se pudo añadir el nuevo libro");
+            }
+
+            return Ok(new { message = "Libro añadido" });
         }
     }
 }

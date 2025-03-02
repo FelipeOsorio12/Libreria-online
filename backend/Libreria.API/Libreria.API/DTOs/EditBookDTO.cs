@@ -4,8 +4,7 @@ namespace Libreria.API.DTOs
 {
     public class EditBookDTO
     {
-        [Required]
-        public int Id { get; set; }
+     
       
         [MaxLength(250)]
         [MinLength(1)]
