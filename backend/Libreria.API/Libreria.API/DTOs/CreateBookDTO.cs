@@ -67,6 +67,6 @@ namespace Libreria.API.DTOs
 
         [Required]
 
-        public byte[] imagenPortada { get; set; }
+        public string imagenPortada { get; set; }
     }
 }

@@ -45,7 +45,7 @@
 
         [HttpPatch("{id}")]
 
-        public async Task <IActionResult> editUser (int Id, EditUserDTO editUserDTO)
+        public async Task <IActionResult> editUser (int id, [FromBody]EditUserDTO editUserDTO)
         {
 
             if (!ModelState.IsValid)
@@ -58,7 +58,7 @@
                 });
             }
 
-            var users = await _usersService.editUserById(Id, editUserDTO);
+            var users = await _usersService.editUserById(id, editUserDTO);
 
             if (users == 0)
             {

@@ -71,7 +71,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -129,7 +129,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       },

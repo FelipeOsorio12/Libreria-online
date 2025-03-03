@@ -87,15 +87,15 @@ namespace Libreria.API.Controllers
 
         [HttpDelete("{id}")]
 
-        public async Task<IActionResult> deleteBookById (int Id)
+        public async Task<IActionResult> deleteBookById (int id)
         {
-            if(Id == 0)
+            if(id == 0)
             {
                 return BadRequest(new{message = "Hubo errores en el envio de parametros."});
 
             }
 
-            var result = await _booksService.DeleteBookByIdAsync(Id);
+            var result = await _booksService.DeleteBookByIdAsync(id);
 
             if (result == 0)
             {

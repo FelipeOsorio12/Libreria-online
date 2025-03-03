@@ -77,17 +77,17 @@ namespace Libreria.API.Services
                 return 0;
             }
 
-            if (editUserDTO.nombre != null) editUserDTO.nombre = user.nombre;
+            if (editUserDTO.nombre != null) user.nombre = editUserDTO.nombre;
 
-            if (editUserDTO.apellidos != null) editUserDTO.apellidos = user.apellidos;
+            if (editUserDTO.apellidos != null) user.apellidos = editUserDTO.apellidos;
 
-            if (editUserDTO.genero != null) editUserDTO.genero = user.genero;
+            if (editUserDTO.genero != null) user.genero = editUserDTO.genero;
 
-            if (editUserDTO.correoElectronico != null) editUserDTO.correoElectronico = user.correoElectronico;
+            if (editUserDTO.correoElectronico != null) user.correoElectronico = editUserDTO.correoElectronico;
 
-            if (editUserDTO.usuario != null) editUserDTO.usuario = user.usuario;
+            if (editUserDTO.usuario != null) user.usuario = editUserDTO.usuario;
 
-            if (editUserDTO.cotrasenia != null) editUserDTO.cotrasenia = user.cotrasenia;
+            if (editUserDTO.cotrasenia != null) user.cotrasenia = editUserDTO.cotrasenia;
 
             return await _libreraryContext.SaveChangesAsync();
 

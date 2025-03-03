@@ -69,7 +69,7 @@ namespace Libreria.API.Services
                 estado = createBookDTO.estado,
                 precio = createBookDTO.precio,
                 sipnosis = createBookDTO.sipnosis,
-                imagenPortada = createBookDTO.imagenPortada,
+                imagenPortada = Convert.FromBase64String(createBookDTO.imagenPortada),
             };
 
             var book = await _libreraryContext.books.AddAsync(createBookEntity);
