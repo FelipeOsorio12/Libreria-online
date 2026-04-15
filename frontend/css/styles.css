@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  color: #808a93;
+  gap: 1rem;
+}
+
+#logo {
+  color: white;
+  margin-right: auto;
+}
+
+main {
+}
+
+.hero {
+}
+
+.featured-books {
+}
+
+.books-management {
+}
+
+footer {
+  background-color: #333;
+}
