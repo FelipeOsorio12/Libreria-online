@@ -3,13 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
   <body>
-    <div></div>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a id="logo" href="#">Libreria</a>
+        <a id="libros" href="#">Libros</a>
+        <a id="login" href="#">Login</a>
+      </div>
+    </nav>
 
-    <main></main>
+    <main>
+      <div class="hero">
+        <h1 id="welcome">Bienvenido a la Libreria</h1>
+        <h6 id="description">Descubre nuestra amplia selección de libros</h6>
+        <button id="books-btn">ver libros</button>
+        <button id="login-btn">login</button>
+      </div>
 
-    <footer></footer>
+      <div class="featured-books">
+        <h3 id="featured-books-title">Libros destacados</h3>
+        <div class="books-container">
+          <div class="book">
+            <img class="book-image" />
+            <h4 class="book-title"></h4>
+            <p class="book-description"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="books-management">
+        <h3 id="books-management-title">¿quieres administrar tus libros?</h3>
+        <button id="manage-books-btn">Ir al panel</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-text">
+        &copy; 2024 Libreria. Todos los derechos reservados.
+      </p>
+    </footer>
   </body>
 </html>
