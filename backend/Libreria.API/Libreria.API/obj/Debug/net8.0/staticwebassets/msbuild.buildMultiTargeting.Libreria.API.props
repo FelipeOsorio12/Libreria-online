@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Libreria.API.props" />
-</Project>
