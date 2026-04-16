@@ -59,6 +59,22 @@ main {
   gap: 1rem;
 }
 
+.books-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5rem;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  border: 2px solid #ddd;
+}
+
 .books-management {
   text-align: center;
   display: flex;
