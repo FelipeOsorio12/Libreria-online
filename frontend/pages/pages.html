@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pages</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <script src="/js/pages.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a id="logo" href="#">Libreria</a>
+        <a id="libros" href="#">Libros</a>
+        <a id="login" href="#">Login</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="hero">
+        <h1 id="welcome">Todos los libros</h1>
+        <h6 id="description">Explora nuestra amplia selección de libros</h6>
+        <input type="text" id="search-input" placeholder="Buscar libros..." />
+        <button class="btn" id="search-btn">Buscar</button>
+
+        <select name="" id="">
+          <option value="">Filtrar: Autor</option>
+          <option value="marioMendonza">Mario Mendonza</option>
+          <option value="gabrielGarciaMarquez">Gabriel García Márquez</option>
+          <option value="marioVargasllosa">Mario Vargas Llosa</option>
+        </select>
+      </div>
+
+      <div id="books-container" class="books-container"></div>
+
+      <div class="pagination">
+        <button class="btn" id="prev-btn">Anterior</button>
+        <span id="page-info">Página 1 de 10</span>
+        <button class="btn" id="next-btn">Siguiente</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p id="footer-text">
+        &copy; 2024 Libreria. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>
