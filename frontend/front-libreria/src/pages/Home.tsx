@@ -1,12 +1,13 @@
 import { BookPresentation } from "../books/components/BookPresentation";
-import { books } from "../muck-books/books";
+import { type structureBook } from "../muck-books/books";
 
 interface HomePageProps {
   title: string;
   description: string;
+  books: structureBook[];
 }
 
-export const Home = ({ title, description }: HomePageProps) => {
+export const Home = ({ title, description, books }: HomePageProps) => {
   return (
     <>
       <div className="hero">
@@ -23,7 +24,8 @@ export const Home = ({ title, description }: HomePageProps) => {
           <h3 id="featured-books-title">Libros destacados</h3>
 
           <div id="books-container" className="books-container">
-            <BookPresentation books={books} />
+            {/* <BookPresentation books={books} /> */}
+            <BookPresentation books={books}></BookPresentation>
           </div>
         </div>
 
