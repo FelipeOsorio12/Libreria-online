@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { BookPresentation } from "../../books/components/BookPresentation";
 import { type structureBook, books } from "../../muck-books/books";
-import { CustomHeader } from "../../commun/components/CustomHeader";
-import { CustomFooter } from "../../commun/components/CustomFooter";
+import { CustomHeader } from "../../components/commun/CustomHeader";
+import { CustomFooter } from "../../components/commun/CustomFooter";
 import { Link } from "react-router";
 interface HomePageProps {
   title?: string;
