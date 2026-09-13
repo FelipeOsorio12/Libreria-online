@@ -3,7 +3,7 @@ import { BookPresentation } from "../../books/components/BookPresentation";
 import { type structureBook, books } from "../../muck-books/books";
 import { CustomHeader } from "../../commun/components/CustomHeader";
 import { CustomFooter } from "../../commun/components/CustomFooter";
-
+import { Link } from "react-router";
 interface HomePageProps {
   title?: string;
   description?: string;
@@ -15,7 +15,6 @@ export const Home = ({ title, description }: HomePageProps) => {
   return (
     <>
       <CustomHeader
-        items={["Libreria", "Libros", "Login"]}
         placeholder="Buscar..."
         books={books}
         onSearch={setBooksFound}
@@ -26,11 +25,11 @@ export const Home = ({ title, description }: HomePageProps) => {
 
         <h5 id="description">{description}</h5>
 
-        <a href="/pages/books.html">
+        <Link to="">
           <button className="btn" id="books-btn">
             Ver libros
           </button>
-        </a>
+        </Link>
 
         <div className="featured-books">
           <h3 id="featured-books-title">Libros destacados</h3>

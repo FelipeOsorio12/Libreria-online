@@ -1,15 +1,14 @@
 import { useState } from "react";
 import type { structureBook } from "../../muck-books/books";
+import { Link } from "react-router";
 
 interface CustomSearchProps {
   placeholder: string;
   books: structureBook[];
-  items: string[];
   onSearch: (booksFound: structureBook[]) => void;
 }
 
 export const CustomHeader = ({
-  items,
   placeholder,
   books,
   onSearch,
@@ -34,11 +33,11 @@ export const CustomHeader = ({
     <header>
       <nav className="navbar">
         <div className="nav-container">
-          {items.map((item) => (
-            <a key={item} href="">
-              {item}
-            </a>
-          ))}
+          <a>Libreria</a>
+          <a href="">Libros</a>
+          <Link to="/login">
+            <a>Login</a>
+          </Link>
 
           <div className="search-container">
             <input

@@ -1,3 +1,7 @@
 export const Login = () => {
-  return <div></div>;
+  return (
+    <div>
+      <h1>Soy el Login</h1>
+    </div>
+  );
 };
