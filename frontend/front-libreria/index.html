@@ -5,6 +5,40 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>front-libreria</title>
+
+      <!-- Tailwind CSS (CDN, solo para referencia estática) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Configuración de Tailwind (colores/fuentes personalizadas del proyecto) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F7F2EA",
+            "cream-dark": "#F0E9DC",
+            ink: "#231F1A",
+            terracotta: "#C1622D",
+            "terracotta-dark": "#A84F22",
+            panel: "#1E1A16",
+          },
+          fontFamily: {
+            serif: ["Fraunces", "serif"],
+            sans: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
   </head>
   <body>
     <div id="root"></div>
