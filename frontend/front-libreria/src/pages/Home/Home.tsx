@@ -12,7 +12,7 @@ export const Home = () => {
   const [booksFound, setBooksFound] = useState<structureBook[]>(books);
 
   return (
-    <body className="bg-cream text-ink font-sans antialiased">
+    <>
       <CustomHeader
         placeholder="Buscar..."
         books={books}
@@ -80,7 +80,7 @@ export const Home = () => {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
+                      strokeWidth="2"
                     >
                       <circle cx="9" cy="21" r="1" />
                       <circle cx="20" cy="21" r="1" />
@@ -114,7 +114,7 @@ export const Home = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                 >
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
@@ -168,6 +168,6 @@ export const Home = () => {
       </main>
 
       <CustomFooter />
-    </body>
+    </>
   );
 };

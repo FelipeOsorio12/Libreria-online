@@ -47,8 +47,8 @@ export const CustomHeader = ({
           <a className="hover:text-ink transition-colors" href="">
             Libros
           </a>
-          <Link to="/login">
-            <a className="hover:text-ink transition-colors">Login</a>
+          <Link className="hover:text-ink transition-colors" to="/login">
+            Login
           </Link>
         </nav>
 
@@ -59,7 +59,7 @@ export const CustomHeader = ({
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              strokeWidth="2"
             >
               <circle cx="11" cy="11" r="7" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
