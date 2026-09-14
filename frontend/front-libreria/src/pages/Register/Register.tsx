@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import "./Register.css";
+import "../../components/ui/auth.css";
 
 export const Register = () => {
   return (
@@ -27,7 +27,7 @@ export const Register = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.6"
+                  strokeWidth="1.6"
                 >
                   <path d="M4 5.5c2.2-1 5.2-1 8 0v13c-2.8-1-5.8-1-8 0v-13Z" />
                   <path d="M20 5.5c-2.2-1-5.2-1-8 0v13c2.8-1 5.8-1 8 0v-13Z" />
@@ -99,7 +99,7 @@ export const Register = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="1.6"
+                        strokeWidth="1.6"
                       >
                         <rect x="3" y="5" width="18" height="14" rx="2.5" />
                         <path d="m4 7 8 6 8-6" />
@@ -141,7 +141,7 @@ export const Register = () => {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.6"
+                          strokeWidth="1.6"
                         >
                           <path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" />
                           <circle cx="12" cy="12" r="3" />
