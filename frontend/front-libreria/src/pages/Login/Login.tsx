@@ -99,9 +99,12 @@ export const Login = () => {
                   Continúa donde dejaste tu próxima lectura.
                 </p>
 
-                <form className="auth-form" onsubmit="return false;">
+                <form
+                  className="auth-form"
+                  onSubmit={(event) => event.preventDefault()}
+                >
                   <div className="auth-field">
-                    <label for="login-email" className="auth-field__label">
+                    <label htmlFor="login-email" className="auth-field__label">
                       Correo electrónico
                     </label>
                     <div className="auth-input">
@@ -119,7 +122,7 @@ export const Login = () => {
                         id="login-email"
                         type="email"
                         placeholder="tu@correo.com"
-                        autocomplete="email"
+                        autoComplete="email"
                         required
                       />
                     </div>
@@ -127,7 +130,10 @@ export const Login = () => {
 
                   <div className="auth-field">
                     <div className="auth-field__row">
-                      <label for="login-password" className="auth-field__label">
+                      <label
+                        htmlFor="login-password"
+                        className="auth-field__label"
+                      >
                         Contraseña
                       </label>
                       <a href="#" className="auth-field__hint">
@@ -139,7 +145,7 @@ export const Login = () => {
                         id="login-password"
                         type="password"
                         placeholder=""
-                        autocomplete="current-password"
+                        autoComplete="current-password"
                         required
                         data-password-input
                       />

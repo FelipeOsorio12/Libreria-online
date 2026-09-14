@@ -3,7 +3,6 @@ import { BookPresentation } from "../../books/components/BookPresentation";
 import { type structureBook, books } from "../../muck-books/books";
 import { CustomHeader } from "../../components/commun/CustomHeader";
 import { CustomFooter } from "../../components/commun/CustomFooter";
-import { Link } from "react-router";
 import panelDashboard from "../../assets/panel-dashboard.jpg";
 import heroChair from "../../assets/hero-chair.jpg";
 import "./Home.css";

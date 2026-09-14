@@ -82,9 +82,15 @@ export const Register = () => {
                   Guarda tus elecciones y sigue tus pedidos con calma.
                 </p>
 
-                <form className="auth-form" onsubmit="return false;">
+                <form
+                  className="auth-form"
+                  onSubmit={(event) => event.preventDefault()}
+                >
                   <div className="auth-field">
-                    <label for="register-email" className="auth-field__label">
+                    <label
+                      htmlFor="register-email"
+                      className="auth-field__label"
+                    >
                       Correo electrónico
                     </label>
                     <div className="auth-input">
@@ -102,7 +108,7 @@ export const Register = () => {
                         id="register-email"
                         type="email"
                         placeholder="tu@correo.com"
-                        autocomplete="email"
+                        autoComplete="email"
                         required
                       />
                     </div>
@@ -110,7 +116,7 @@ export const Register = () => {
 
                   <div className="auth-field">
                     <label
-                      for="register-password"
+                      htmlFor="register-password"
                       className="auth-field__label"
                     >
                       Contraseña
@@ -120,8 +126,8 @@ export const Register = () => {
                         id="register-password"
                         type="password"
                         placeholder=""
-                        autocomplete="new-password"
-                        minlength="8"
+                        autoComplete="new-password"
+                        minLength={8}
                         required
                         data-password-input
                       />
@@ -147,7 +153,7 @@ export const Register = () => {
 
                   <div className="auth-field">
                     <label
-                      for="register-password-confirm"
+                      htmlFor="register-password-confirm"
                       className="auth-field__label"
                     >
                       Confirmar contraseña
@@ -157,8 +163,8 @@ export const Register = () => {
                         id="register-password-confirm"
                         type="password"
                         placeholder=""
-                        autocomplete="new-password"
-                        minlength="8"
+                        autoComplete="new-password"
+                        minLength={8}
                         required
                       />
                     </div>
