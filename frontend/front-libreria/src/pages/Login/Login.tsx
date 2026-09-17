@@ -1,6 +1,24 @@
 import "../../components/ui/auth.css";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import React, { useContext } from "react";
+import { useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 export const Login = () => {
+  const { login } = useContext(AuthContext);
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+
+  const navigation = useNavigate();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const result = login(email, password);
+    if (!result) {
+      return;
+    }
+    navigation("/profile");
+  };
+
   return (
     <>
       <div className="auth-layout">
@@ -98,10 +116,7 @@ export const Login = () => {
                   Continúa donde dejaste tu próxima lectura.
                 </p>
 
-                <form
-                  className="auth-form"
-                  onSubmit={(event) => event.preventDefault()}
-                >
+                <form className="auth-form" onSubmit={handleSubmit}>
                   <div className="auth-field">
                     <label htmlFor="login-email" className="auth-field__label">
                       Correo electrónico
@@ -123,6 +138,8 @@ export const Login = () => {
                         placeholder="tu@correo.com"
                         autoComplete="email"
                         required
+                        value={email}
+                        onChange={(event) => setemail(event.target.value)}
                       />
                     </div>
                   </div>
@@ -147,6 +164,8 @@ export const Login = () => {
                         autoComplete="current-password"
                         required
                         data-password-input
+                        value={password}
+                        onChange={(event) => setpassword(event.target.value)}
                       />
                       <button
                         type="button"
